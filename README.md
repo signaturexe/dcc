@@ -13,8 +13,7 @@ A JSON based, Descriptive, Client Conditioning framework which conditions back-e
  "data": {
 	"request": {
 		"type": "inquire",
-		"operation":
-		 {
+		"operation": {
 			"name": "getPartyId",		
 			"config": {
 				"arguments": {
