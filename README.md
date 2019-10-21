@@ -9,7 +9,7 @@ A JSON based, Descriptive, Client Conditioning framework which conditions back-e
   
   # READ Operation
   
-  "data": {
+ ``` "data": {
 	  "request": {
       "type": "read",
       "operation":{
@@ -44,3 +44,4 @@ A JSON based, Descriptive, Client Conditioning framework which conditions back-e
       }
 	}
  }
+```
