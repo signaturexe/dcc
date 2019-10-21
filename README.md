@@ -51,31 +51,6 @@ A JSON based, Descriptive, Client Conditioning framework which conditions back-e
 				}
 			}		
 		}
-	}
-	"create": {
-		"operation": {
-			"name": "payment",
-			"requestParams": ["acctNumber",etc],
-			"flow": [{
-				"stepId" : 1,
-				"serviceName": "token",
-				"outputTo": "acctToken",
-				"outputParams": ["access_token"]
-			},
-			{
-				"acctKeys"
-			},
-			{
-				"serviceName": "connectSP"
-				"SPName" : "stored_procedure_name"
-			}];
-			"required": [{
-				"partyId": "actual_field_name",
-				"resultMessage": "successful operation"
-			}]
-		}
-		"creator": "id",
-		"role": "admin"
-	}
+	}	
 }
 ```
