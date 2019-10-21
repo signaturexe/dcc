@@ -10,38 +10,72 @@ A JSON based, Descriptive, Client Conditioning framework which conditions back-e
   # READ Operation
   
  ``` "data": {
-	  "request": {
-      "type": "read",
-      "operation":{
-        "name": "getCustomerID",		
-        "config": {
-          "arguments": {
-            "account": 6499570182344576
-          },
-          "required": {
-            "all": false,           //set it to true if all fields are required
-            "fields": [
-            {
-              "fname":"customerID",
-              "extractFrom:": "/custIDRetrieval",
-              "fieldFrom":"custID"  //the value is the field name in the above service's respnse
-              "dataTypeRequested":"String"
-            },
-            {
-              "fname: "relationshipID",
-              "extractFrom:": "/acctrelship",
-              "fieldFrom":"relID"					//default data type is string
-            }
-            {
-              "fname: "creditLimit",
-              "inputValue": 15600,
-              "extractFrom:": "/creditLimitRetrieval",
-              "fieldFrom":"creditLimit"					
-            }
-          ]
-          }
-        }		
-      }
+	"request": {
+		"type": "inquire",
+		operation:{
+			"name": "getPartyId",		
+			"config": {
+				"arguments": {
+					"account": "account_value"
+				},
+				"required": {
+					"all": false,
+					"fields": [					
+					{
+						"fname": ["partyId"],
+						"extractFrom:": "backend_service",
+						"fieldFrom":"custPartyID" //array if multiple											
+						"dataTypeRequested":"String"
+					},
+					{
+						"fname: "relationshipID",
+						"extractFrom:": "/acctIds",
+						"fieldFrom":"rshipID"					
+					},
+					{
+						"fname: "creditLimit",
+						"input": "credit_limit_service",
+						"extractFrom:": "/climit",
+						"fieldFrom":"credit_Limit"					
+					},
+					{
+						"fname: "recordID",						
+						"extractFrom:": "database",
+						"query":{
+							"type" : "stored_procedure",
+							"name" : "get_UID",
+							"parameters": [account_number]							
+						}											
+					}
+				]
+				}
+			}		
+		}
 	}
- }
+	"create": {
+		"operation": {
+			"name": "payment",
+			"requestParams": ["acctNumber",etc],
+			"flow": [{
+				"stepId" : 1,
+				"serviceName": "token",
+				"outputTo": "acctToken",
+				"outputParams": ["access_token"]
+			},
+			{
+				"acctKeys"
+			},
+			{
+				"serviceName": "connectSP"
+				"SPName" : "stored_procedure_name"
+			}];
+			"required": [{
+				"partyId": "actual_field_name",
+				"resultMessage": "successful operation"
+			}]
+		}
+		"creator": "id",
+		"role": "admin"
+	}
+}
 ```
