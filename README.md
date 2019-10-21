@@ -1,5 +1,5 @@
 # dcc (Description based Client Conditioning)
-A JSON based, Descriptive, Client Conditioning framework which conditions back-end clients according to needs described by the front end. The flexibility to describe the nature of information required, helps the data-asking-developer to get major control over the type of data it needs.
+A JSON based, Descriptive, Client Conditioning framework which conditions back-end clients according to needs described by the front end. The flexibility to describe the nature of information required, helps the data-asking-developer to get major control over the type of data it needs. This concept has similar goals GraphQL targets to achieve but without the overhead of a new language, using good old JSON!
 
 # Where does concept of dcc apply?
 [visio diagram]
