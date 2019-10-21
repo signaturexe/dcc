@@ -56,9 +56,14 @@ A JSON based, Descriptive, Client Conditioning framework which conditions back-e
 }
 ```
 # Why use dcc?
-	1. Frontend/UI controls what information is needed rather than middleware/backend specifying what information UI can receive.
-	2. Moreover, the granularity ability can specify where to access data from i.e. which exact web service, which DB, which Stored Procedure, etc. You can also specify queries to run directly from the UI.
-	3. No need to redeploy applications just because you need an additional parameter from the same web service you created before.
-	4. Dcc majorly helps combine multiple endpoints to a very few for better re-organization and thinner architectures.
-
-Combine dcc with other JSON based DB (Mongo, CouchDB, etc) for seamless integration directly from the UI.
+	1. Frontend/UI controls what information is needed rather than middleware/backend 
+	   specifying what information UI can receive.
+	2. Moreover, the granularity ability can specify where to access data from 
+	   i.e. which exact web service, which DB, which Stored Procedure, etc. 
+	   You can also specify queries to run directly from the UI.
+	3. No need to redeploy applications just because you need an additional 
+	   parameter from the same web service you created before.
+	4. Dcc majorly helps combine multiple endpoints to a very few 
+	   for better re-organization and thinner architectures.
+	5. Combine dcc with other JSON based DB (Mongo, CouchDB, etc) 
+	   for seamless integration directly from the UI.
